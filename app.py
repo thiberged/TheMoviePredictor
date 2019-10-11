@@ -1,3 +1,8 @@
+"""
+The Movie Predictor Script
+auto : thiberge damien
+"""
+
 import mysql.connector
 import sys
 import argparse
@@ -56,7 +61,6 @@ if args.context == "people":
         peopleId = args.id
         results = find("people", peopleId, 'find')
         if args.export:
-            print('exportation')
             csvfile = open(args.export, 'w', encoding='utf-8', newline='')
             writer = csv.writer(csvfile)
             writer.writerow(results[0].keys())
@@ -69,7 +73,6 @@ if args.context == "people":
     if args.action == "list":
         results = find("people", 0, 'list')
         if args.export:
-            print('exportation')
             csvfile = open(args.export, 'w', encoding='utf-8', newline='')
             writer = csv.writer(csvfile)
             writer.writerow(results[0].keys())
@@ -85,7 +88,6 @@ if args.context == "movies":
         movieId = args.id
         results = find("movies", movieId, 'find')
         if args.export:
-            print('exportation')
             csvfile = open(args.export, 'w', encoding='utf-8', newline='')
             writer = csv.writer(csvfile)
             writer.writerow(results[0].keys())
@@ -100,7 +102,6 @@ if args.context == "movies":
     if args.action == "list":
         results = find("movies", 0, 'list')
         if args.export:
-            print('exportation')
             csvfile = open(args.export, 'w', encoding='utf-8', newline='')
             writer = csv.writer(csvfile)
             writer.writerow(results[0].keys())
